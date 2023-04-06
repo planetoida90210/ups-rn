@@ -3,13 +3,12 @@ import { NavigationContainer } from "@react-navigation/native";
 
 //external imports
 import { CustomersScreen } from "./screens";
+import RootNavigator from "./navigator/RootNavigator";
 
 export default function App() {
   return (
     <NavigationContainer>
-      <SafeAreaView>
-        <CustomersScreen />
-      </SafeAreaView>
+      <RootNavigator />
     </NavigationContainer>
   );
 }
