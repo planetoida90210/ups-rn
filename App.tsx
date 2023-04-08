@@ -7,7 +7,7 @@ import { CustomersScreen } from "./screens";
 import RootNavigator from "./navigator/RootNavigator";
 
 const client = new ApolloClient({
-  uri: "https://saojose.stepzen.net/api/hipster-fly",
+  uri: "http://localhost:5001/api/hipster-fly",
   cache: new InMemoryCache(),
 });
 

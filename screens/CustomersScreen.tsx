@@ -6,16 +6,17 @@ import CustomerCard from "../components/CustomerCard";
 
 const CustomersScreen = () => {
   const [input, setInput] = useState<string>("");
+
   const { loading, error, data } = useQuery(GET_CUSTOMERS);
 
   return (
-    <ScrollView className="bg-[#59C1CC]">
+    <ScrollView className="bg-[#59C1CC] flex flex-1">
       <Image source={{ uri: "https://links.papareact.com/3jc" }} className="w-full h-64" />
       <TextInput
         placeholder="Search by Customer"
         value={input.toLowerCase()}
         onChangeText={setInput}
-        className="bg-white p-4 px-10 flex items-center justify-center flex-1 text-xl rounded-xl mx-2"
+        className="bg-white p-4 px-10 flex items-center justify-center text-xl rounded-xl mx-2"
       />
 
       {data?.getCustomers.map(({ name: ID, value: { email, name } }: CustomerResponse) => (
