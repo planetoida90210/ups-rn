@@ -17,14 +17,18 @@ const CustomerCard = ({ email, name, userId }: Props) => {
       <Card>
         <View>
           <View>
-            <Text>{name}</Text>
-            <Text>ID: {userId}</Text>
-          </View>
-          <View>
-            <Text>{loading ? "loading..." : `${orders.length} x`}</Text>
-            <Icon name="box" type="entypo" color="#59C1CC" size={50} />
+            <View className="flex-row justify-between">
+              <Text className="text-2xl font-bold">{name}</Text>
+              <Text className="text-sm text-[#59C1cc]">ID: {userId}</Text>
+            </View>
+            <View>
+              <Text>{loading ? "loading..." : `${orders.length} x`}</Text>
+              <Icon name="box" type="entypo" color="#59C1CC" size={50} />
+            </View>
           </View>
         </View>
+        <Card.Divider />
+        <Text>{email}</Text>
       </Card>
     </TouchableOpacity>
   );
